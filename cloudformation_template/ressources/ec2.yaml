@@ -1,0 +1,13 @@
+Resources:
+  EC2Server:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-0c76bd4bd302b30ec
+      InstanceType: t2.micro
+      SecurityGroupIds:
+        - vpc-02ee6a23f99d5c497
+      KeyName: gre_kp
+      BlockDeviceMappings:
+        - DeviceName: /dev/xvda
+          Ebs:
+            VolumeSize: 25
